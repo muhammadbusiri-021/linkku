@@ -1,8 +1,9 @@
-# Linkku
+# Tentang Linkku
 
 Personal Media Fetcher untuk desainer dan kreator: bebas iklan perantara, tanpa verifikasi berlapis, dan mengambil stream resolusi asli tanpa watermark.
 
 ## Fitur Utama
+
 - **TikTok:** Unduh MP4 Full HD (Tanpa Watermark), MP4 Standar, Cover HD, dan Audio MP3 asli.
 - **Instagram:** Unduh video Reels dan Post asli.
 - **Twitter / X:** Unduh video kualitas tertinggi dan gambar resolusi penuh.
