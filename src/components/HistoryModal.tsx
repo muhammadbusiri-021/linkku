@@ -35,10 +35,10 @@ export function HistoryModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="history-dialog-title"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-3 sm:p-4"
     >
       <div
-        className="relative w-full max-w-lg rounded-lg border border-borderline-light bg-surface-light p-6 shadow-2xl transition-colors dark:border-borderline-dark dark:bg-surface-dark"
+        className="relative w-full max-w-lg min-w-0 rounded-lg border border-borderline-light bg-surface-light p-4 shadow-2xl transition-colors dark:border-borderline-dark dark:bg-surface-dark sm:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-borderline-light-subtle pb-3 dark:border-borderline-dark-subtle">
@@ -50,7 +50,7 @@ export function HistoryModal({
               Riwayat Unduhan
             </h3>
             <p className="text-xs text-content-muted-light dark:text-content-muted-dark">
-              Tersimpan di browser lokal perangkat ini.
+              Tersimpan di browser perangkat ini.
             </p>
           </div>
 
@@ -91,12 +91,12 @@ export function HistoryModal({
                   onSelect(item);
                   onClose();
                 }}
-                className="flex w-full items-center gap-3 rounded-md border border-borderline-light bg-surface-light p-3 text-left transition-colors hover:border-accent hover:bg-surface-light-subtle dark:border-borderline-dark dark:bg-surface-dark-subtle dark:hover:border-accent dark:hover:bg-surface-dark"
+                className="flex w-full min-w-0 max-w-full items-center gap-3 overflow-hidden rounded-md border border-borderline-light bg-surface-light p-3 text-left transition-colors hover:border-accent hover:bg-surface-light-subtle dark:border-borderline-dark dark:bg-surface-dark-subtle dark:hover:border-accent dark:hover:bg-surface-dark"
               >
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded bg-accent/10 text-xs font-bold uppercase text-accent dark:bg-accent/20">
                   {item.platform.slice(0, 2)}
                 </div>
-                <div className="min-w-0 flex-1">
+                <div className="min-w-0 flex-1 overflow-hidden">
                   <p className="truncate text-xs font-medium text-content-primary-light dark:text-content-primary-dark">
                     {item.title}
                   </p>

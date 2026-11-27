@@ -9,7 +9,12 @@ interface CommandBarProps {
   isLoading: boolean;
 }
 
-export function CommandBar({ url, onChangeUrl, onSubmit, isLoading }: CommandBarProps) {
+export function CommandBar({
+  url,
+  onChangeUrl,
+  onSubmit,
+  isLoading,
+}: CommandBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handlePaste = async () => {
@@ -46,7 +51,7 @@ export function CommandBar({ url, onChangeUrl, onSubmit, isLoading }: CommandBar
               required
               value={url}
               onChange={(e) => onChangeUrl(e.target.value)}
-              placeholder="Tempel link TikTok, Instagram, Twitter/X, atau video langsung..."
+              placeholder="Tempel link: TikTok, Instagram, Twitter/X, atau video langsung.."
               disabled={isLoading}
               className="w-full rounded-md border border-borderline-light bg-surface-light px-4 py-3 pr-20 text-sm text-content-primary-light placeholder:text-content-muted-light/70 focus:border-accent focus:outline-none dark:border-borderline-dark dark:bg-surface-dark dark:text-content-primary-dark dark:placeholder:text-content-muted-dark/70 sm:py-2.5"
             />

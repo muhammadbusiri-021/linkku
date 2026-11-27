@@ -369,8 +369,14 @@ export async function inspectMediaUrl(rawUrl: string): Promise<MediaMetadata> {
     return await extractDirectVideo(trimmed);
   }
 
+  if (platform === "instagram") {
+    throw new Error(
+      "Instagram saat ini tidak didukung karena proteksi login ketat Meta. Silakan gunakan link TikTok, Twitter/X, atau link video langsung."
+    );
+  }
+
   // Jika platform lain dan yt-dlp tidak terpasang
   throw new Error(
-    `Platform ${platform} membutuhkan mesin yt-dlp di server atau link belum didukung secara langsung.`
+    `Platform ${platform} belum didukung secara langsung. Gunakan link TikTok, Twitter/X, atau video langsung.`
   );
 }

@@ -4,7 +4,6 @@ import React from "react";
 import type { SystemStatus } from "@/types/media";
 
 interface HeaderProps {
-  systemStatus: SystemStatus | null;
   historyCount: number;
   onOpenHistory: () => void;
   isDark: boolean;
@@ -12,7 +11,6 @@ interface HeaderProps {
 }
 
 export function Header({
-  systemStatus,
   historyCount,
   onOpenHistory,
   isDark,
@@ -20,9 +18,9 @@ export function Header({
 }: HeaderProps) {
   return (
     <header className="border-b border-borderline-light bg-surface-light px-4 py-3 transition-colors dark:border-borderline-dark dark:bg-surface-dark sm:px-6">
-      <div className="mx-auto flex max-w-5xl items-center justify-between">
+      <div className="mx-auto flex max-w-4xl items-center justify-between">
         {/* Brand Wordmark (Opsi B: Tipografi Bersih) */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight text-content-primary-light dark:text-content-primary-dark">
             Linkku
           </span>
@@ -33,26 +31,6 @@ export function Header({
 
         {/* Action Controls */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Status Engine Indicator */}
-          <div
-            className="flex items-center gap-1.5 rounded-md border border-borderline-light-subtle bg-surface-light-subtle px-2.5 py-1 text-xs text-content-muted-light dark:border-borderline-dark-subtle dark:bg-surface-dark-subtle dark:text-content-muted-dark"
-            title={
-              systemStatus?.hasYtDlp
-                ? "Mesin yt-dlp aktif di server"
-                : "Mesin native fetcher aktif"
-            }
-          >
-            <span
-              className={`h-2 w-2 rounded-full ${
-                systemStatus?.hasYtDlp ? "bg-status-success" : "bg-accent"
-              }`}
-              aria-hidden="true"
-            />
-            <span className="tabular-data">
-              {systemStatus?.hasYtDlp ? "Engine: yt-dlp" : "Engine: Native"}
-            </span>
-          </div>
-
           {/* History Button */}
           <button
             type="button"

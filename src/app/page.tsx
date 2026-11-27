@@ -142,16 +142,15 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Header
-        systemStatus={systemStatus}
         historyCount={history.length}
         onOpenHistory={() => setIsHistoryOpen(true)}
         isDark={isDark}
         onToggleTheme={handleToggleTheme}
       />
 
-      <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-8 sm:px-6">
+      <main className="mx-auto w-full max-w-4xl min-w-0 flex-1 px-4 py-6 sm:px-6">
         <div className="space-y-6">
           {/* Main Input Control Bar */}
           <CommandBar
